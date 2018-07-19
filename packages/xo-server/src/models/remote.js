@@ -1,6 +1,5 @@
 import Collection from '../collection/redis'
 import Model from '../model'
-import { forEach } from '../utils'
 
 // ===================================================================
 
@@ -20,17 +19,5 @@ export class Remotes extends Collection {
         error: '',
       })
     )
-  }
-
-  async save (remote) {
-    return /* await */ this.update(remote)
-  }
-
-  async get (properties) {
-    const remotes = await super.get(properties)
-    forEach(remotes, remote => {
-      remote.enabled = remote.enabled === 'true'
-    })
-    return remotes
   }
 }

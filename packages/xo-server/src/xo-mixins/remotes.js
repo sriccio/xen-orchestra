@@ -20,7 +20,9 @@ export default class {
         'remotes',
         () => this._remotes.get(),
         remotes =>
-          Promise.all(mapToArray(remotes, remote => this._remotes.save(remote)))
+          Promise.all(
+            mapToArray(remotes, remote => this._remotes.update(remote))
+          )
       )
 
       await this.syncAllRemotes()
@@ -73,7 +75,7 @@ export default class {
     const handler = await this.getRemoteHandler(remote.properties, true)
     const props = await handler.sync()
     this._updateRemote(remote, props)
-    return (await this._remotes.save(remote)).properties
+    return (await this._remotes.update(remote)).properties
   }
 
   _updateRemote (remote, { name, url, enabled, error }) {

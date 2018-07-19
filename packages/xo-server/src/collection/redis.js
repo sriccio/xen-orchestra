@@ -34,6 +34,16 @@ import { asyncMap } from '../utils'
 
 const VERSION = '20170905'
 
+const serialize = JSON.stringify
+const unserialize = JSON.parse
+const tryUnserialize = value => {
+  try {
+    return unserialize(value)
+  } catch (_) {
+    return value
+  }
+}
+
 export default class Redis extends Collection {
   constructor ({ connection, indexes = [], prefix, uri }) {
     super()
@@ -83,14 +93,14 @@ export default class Redis extends Collection {
             values == null
               ? redis.srem(idsIndex, id) // entry no longer exists
               : asyncMap(indexes, index => {
-                const value = values[index]
-                if (value !== undefined) {
-                  return redis.sadd(
-                    `${prefix}_${index}:${String(value).toLowerCase()}`,
-                    id
-                  )
-                }
-              })
+                  const value = values[index]
+                  if (value !== undefined) {
+                    return redis.sadd(
+                      `${prefix}_${index}:${String(value).toLowerCase()}`,
+                      id
+                    )
+                  }
+                })
         )
       )
     )
@@ -108,6 +118,10 @@ export default class Redis extends Collection {
           if (isEmpty(model)) {
             return
           }
+
+          Object.keys(model).forEach(key => {
+            model[key] = tryUnserialize(model[key])
+          })
 
           // Mix the identifier in.
           model.id = id
@@ -161,7 +175,7 @@ export default class Redis extends Collection {
             return
           }
 
-          params.push(name, value)
+          params.push(name, serialize(value))
         })
 
         const key = `${prefix}:${id}`
