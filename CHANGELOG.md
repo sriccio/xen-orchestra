@@ -18,6 +18,7 @@
 
 - [Pools] Filter GPU groups by pool [#3176](https://github.com/vatesfr/xen-orchestra/issues/3176) (PR [#3253](https://github.com/vatesfr/xen-orchestra/pull/3253))
 - [Backup NG] Fix delta backups with SMB remotes [#3224](https://github.com/vatesfr/xen-orchestra/issues/3224) (PR [#3278](https://github.com/vatesfr/xen-orchestra/pull/3278))
+- [Backup NG] A successful backup job reported as Interrupted [#3018](https://github.com/vatesfr/xen-orchestra/issues/3018) (PR [#3238](https://github.com/vatesfr/xen-orchestra/pull/3238))
 
 ### Released packages
 
