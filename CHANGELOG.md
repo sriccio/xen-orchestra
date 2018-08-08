@@ -18,6 +18,7 @@
 
 - [Pools] Filter GPU groups by pool [#3176](https://github.com/vatesfr/xen-orchestra/issues/3176) (PR [#3253](https://github.com/vatesfr/xen-orchestra/pull/3253))
 - [Backup NG] Fix delta backups with SMB remotes [#3224](https://github.com/vatesfr/xen-orchestra/issues/3224) (PR [#3278](https://github.com/vatesfr/xen-orchestra/pull/3278))
+- [Backup NG form] Schedule's name overrode with undefined if it's not been edited [#3286](https://github.com/vatesfr/xen-orchestra/issues/3286) (PR [#3288](https://github.com/vatesfr/xen-orchestra/pull/3288))
 
 ### Released packages
 
