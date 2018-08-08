@@ -13,6 +13,7 @@
 - [Backup NG Overview] List the Backup NG job's modes [#3169](https://github.com/vatesfr/xen-orchestra/issues/3169) (PR [#3277](https://github.com/vatesfr/xen-orchestra/pull/3277))
 - [Backup NG form] Move "Use compression" checkbox in the advanced settings [#2711](https://github.com/vatesfr/xen-orchestra/issues/2711) (PR [#3281](https://github.com/vatesfr/xen-orchestra/pull/3281))
 - [Backup NG form] Ability to remove previous backups first before backup the VMs [#3212](https://github.com/vatesfr/xen-orchestra/issues/3212) (PR [#3260](https://github.com/vatesfr/xen-orchestra/pull/3260))
+- [Backup NG form] Fix default retention to 1 [#3134](https://github.com/vatesfr/xen-orchestra/issues/3134) (PR [#3290](https://github.com/vatesfr/xen-orchestra/pull/3290))
 
 ### Bug fixes
 
